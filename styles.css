@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: "Karla", sans-serif;
+    background-color: #1C1C1C;
 }
 
 .container{
@@ -11,36 +12,41 @@ body {
     color: white;
     padding-left: 50px;
     margin-top: 50px;
+    border-radius: 5px;
 }
-
-
 
 h1{
     margin: 0;
     font-size: 40px;
-    font-weight: bolder;
+    font-weight:900;
+    padding-top: 100px;
 }
 
 p{
     color: #D5D4D8;
     margin: 0;
     margin-top: 10px;
+    font-size: 20px;
 }
 
-br{
+hr{
+    border: 1px solid;
     color: #2F3E53;
+    width: 445px;
+    margin: 0;
+    margin-top: 35px;
+    margin-bottom: 35px;
 }
 
 .green-text{
     color: #4ADF86;
-    /* margin-top: 100px; */
 }
-
-
 
 .passwords{
     display: flex;
     align-items: center;
+    font-size: 16px;
+    color: #55F991;
 }
 
 .password-one, .password-two{
@@ -50,8 +56,7 @@ br{
     justify-content: center;
     width: 210px;
     height: 40px;
-    border-radius: 10px;
-    margin-top: 70px;
+    border-radius: 5px;
 }
 
 .password-one{
@@ -59,6 +64,7 @@ br{
 }
 
 button{
+    cursor: pointer;
     margin-top: 50px;
     background-color: #10B981;
     color: white;
@@ -66,4 +72,15 @@ button{
     border-radius: 5px;
     padding: 10px 15px;
     font-size: 16px;
+    box-shadow: 0 4px #999;
+}
+
+button:hover{
+    background-color: #44b86f;
+}
+
+button:active{
+    background-color: #44b86f;
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
 }
