@@ -8,7 +8,6 @@ let passOne = ""
 let passTwo = ""
 let copyMsg = document.getElementById("copy-msg")
 
-
 btn.addEventListener('click', ()=>{
     passOne = ""
     passTwo = ""
@@ -26,7 +25,6 @@ btn.addEventListener('click', ()=>{
         passwordTwo.textContent = passTwo
     }
 })
-
 
 // copy on click
 // Function to handle copy operation
