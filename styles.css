@@ -1,13 +1,13 @@
 body {
     margin: 0;
     font-family: "Karla", sans-serif;
-    background-color: #1C1C1C;
+    background-color: #C4B5FD;
 }
 
 .container{
     width: 550px;
     height: 550px;
-    background-color: #1F2937;
+    background-color: #4C1D95;
     margin: auto;
     color: white;
     padding-left: 50px;
@@ -31,7 +31,7 @@ p{
 
 hr{
     border: 1px solid;
-    color: #2F3E53;
+    color: #A78BFA;
     width: 445px;
     margin: 0;
     margin-top: 35px;
@@ -47,12 +47,13 @@ hr{
     align-items: center;
     font-size: 16px;
     color: #55F991;
+    font-weight: bold;
 }
 
 #password-one, #password-two{
     cursor: pointer;
     transition: 0.5s;
-    background-color: #273549;
+    background-color: #6D28D9;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -63,7 +64,7 @@ hr{
 
 #password-one:hover, #password-two:hover{
     transition: 0.5s;
-    background-color: #384e6d;
+    background-color: #8B5CF6;
 }
 
 #password-one{
@@ -76,17 +77,19 @@ hr{
     align-items: center;
     margin-top: 25px;
     padding-left: 200px;
+    font-weight: bold;
 }
 
 button{
     cursor: pointer;
     margin-top: 50px;
     background-color: #10B981;
-    color: white;
+    color: #4C1D95;
     border: none;
     border-radius: 5px;
     padding: 10px 15px;
     font-size: 16px;
+    font-weight: bold;
     box-shadow: 0 4px #999;
 }
 
