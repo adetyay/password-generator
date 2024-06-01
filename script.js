@@ -26,7 +26,6 @@ btn.addEventListener('click', ()=>{
     }
 })
 
-// copy on click
 // Function to handle copy operation
 function handleCopy(event, element) {
     event.preventDefault();
