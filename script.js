@@ -6,11 +6,13 @@ let passwordTwo = document.getElementById("password-two")
 let btn = document.getElementById("btn")
 let passOne = ""
 let passTwo = ""
+let copyMsg = document.getElementById("copy-msg")
 
 
 btn.addEventListener('click', ()=>{
     passOne = ""
     passTwo = ""
+    copyMsg.textContent = ""
 
     for(let i=0; i<15; i++){
         let randomIndex = Math.floor(Math.random()*characters.length)
@@ -27,26 +29,38 @@ btn.addEventListener('click', ()=>{
 
 
 // copy on click
-passwordOne.onclick = function() {
-  document.execCommand("copy");
-}
-
-passwordTwo.onclick = function() {
-    document.execCommand("copy");
-}
-
-passwordOne.addEventListener("copy", function(event) {
-  event.preventDefault();
-  if (event.clipboardData) {
-    event.clipboardData.setData("text/plain", passwordOne.textContent);
-    console.log(event.clipboardData.getData("text"))
-  }
-});
-
-passwordTwo.addEventListener("copy", function(event) {
+// Function to handle copy operation
+function handleCopy(event, element) {
     event.preventDefault();
     if (event.clipboardData) {
-      event.clipboardData.setData("text/plain", passwordTwo.textContent);
-      console.log(event.clipboardData.getData("text"))
+        event.clipboardData.setData("text/plain", element.textContent);
+        console.log(event.clipboardData.getData("text"));
     }
-  });
+}
+
+// Function to handle click event and fade-out effect
+function handleClick(element) {
+    document.execCommand("copy");
+    copyMsg.textContent = "Copied!";
+    copyMsg.style.opacity = 1;
+
+    let opacity = 1;
+    const interval = 50; // interval in milliseconds
+    const decrement = interval / 5000; // amount to decrease each interval
+
+    const fadeOut = setInterval(() => {
+        opacity -= decrement;
+        if (opacity <= 0) {
+            opacity = 0;
+            clearInterval(fadeOut);
+        }
+        copyMsg.style.opacity = opacity;
+    }, interval);
+}
+
+// Attach event listeners
+[passwordOne, passwordTwo].forEach(password => {
+    password.onclick = () => handleClick(password);
+
+    password.addEventListener("copy", event => handleCopy(event, password));
+});
