@@ -24,3 +24,29 @@ btn.addEventListener('click', ()=>{
         passwordTwo.textContent = passTwo
     }
 })
+
+
+// copy on click
+passwordOne.onclick = function() {
+  document.execCommand("copy");
+}
+
+passwordTwo.onclick = function() {
+    document.execCommand("copy");
+}
+
+passwordOne.addEventListener("copy", function(event) {
+  event.preventDefault();
+  if (event.clipboardData) {
+    event.clipboardData.setData("text/plain", passwordOne.textContent);
+    console.log(event.clipboardData.getData("text"))
+  }
+});
+
+passwordTwo.addEventListener("copy", function(event) {
+    event.preventDefault();
+    if (event.clipboardData) {
+      event.clipboardData.setData("text/plain", passwordTwo.textContent);
+      console.log(event.clipboardData.getData("text"))
+    }
+  });
